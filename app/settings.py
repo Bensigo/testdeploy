@@ -118,13 +118,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+#deployment settings
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static-cdn')
+STATIC_ROOT = 'static-cdn'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static')
     )
-
-#deployment settings
 import dj_database_url
 
 DATABASES[‘default’] = dj_database_url.config()
