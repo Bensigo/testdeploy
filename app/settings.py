@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = '*2q2*+ec&rw2i)z&sjnpu-0g-9g85&$!qw@z5w8^ymr4@iq%8h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -118,15 +118,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-#deployment settings
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static-cdn'
+STATIC_ROOT = os.path.join(BASE_DIR,'static-cdn')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static')
     )
-import dj_database_url
-
-DATABASES[‘default’] = dj_database_url.config()
-
-TEMPLATE_DEBUG = True
-SECURE_PROXY_SSL_HEADER = (‘HTTP_X_FORWARDED_PROTO’, ‘https’)
