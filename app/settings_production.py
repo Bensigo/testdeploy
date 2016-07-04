@@ -12,7 +12,7 @@ TEMPLATE_DEBUG = True
 DATABASE['default'] = dj_database_url.config()
 # for serving satic files in a production server
 STATICFILES_DIRS = (
-	os.path.join(BASE_DIR,'static')
+	os.path.join(BASE_DIR,'static'),
 
 	)
 STATIC_ROOT = 'staticfiles'
