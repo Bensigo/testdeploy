@@ -1,4 +1,4 @@
-from test.app.settings import *
+from app.settings import *
 import dj_database_url
 
 #settings for production 
